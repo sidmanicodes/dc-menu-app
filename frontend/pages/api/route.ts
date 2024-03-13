@@ -7,7 +7,9 @@ interface Props {
   meal: string;
 }
 
-export async function GET(request: NextRequest, { dc, day, meal }: Props) {
+export async function GET() {
+	res.status(200).json({name: 'John'});
+	return
   // Get URL from request
   // const url = new URL(request.url);
 
