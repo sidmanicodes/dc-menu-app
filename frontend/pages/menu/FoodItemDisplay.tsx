@@ -22,7 +22,7 @@ const FoodItemDisplay = ({ dc, day, meal }: Props) => {
   useEffect(() => {
     const abortController = new AbortController();
     const fetchFoodItems = async () => {
-		const specifications = { dc: "Segundo", date: "6", meal: "Dinner"};
+		const specifications = { dc: dc, date: day, meal: meal};
       // try {
       //   // Make call to supabase client
       //   setIsLoading(true);
@@ -98,9 +98,44 @@ const FoodItemDisplay = ({ dc, day, meal }: Props) => {
     <>
       {sections.length !== 0 &&
         sections.map((section, index) => (
-			<div key = {index} className="flex flex-col sm:px-32 px-12">
-				{section.name}
-			</div>
+
+			<div key={index} className="flex flex-col sm:px-32 px-12">
+            <h1
+              className={`p-5 badge badge-ghost badge-outline text-2xl${
+                isLoading ? "" : ""
+              }`}
+            >
+              {section.name}
+            </h1>
+            {isLoading && (
+              <div className="flex flex-row pt-9 gap-5 overflow-x-scroll">
+                {loadingSkeletons.map((item) => (
+                  <SkeletonCard key={item} />
+                ))}
+              </div>
+            )}
+            <div className="flex flex-row pt-9 gap-5 overflow-x-scroll">
+              {foodItems
+                .filter((foodItem) => foodItem.section === section)
+                .map((foodItem, index) => (
+                  <div key={foodItem.id}>
+                    <label htmlFor={`food_item_${section}_${index}`}>
+                      <FoodItemCard foodItem={foodItem} />
+                    </label>
+
+                    <FoodItemModal
+                      foodItem={foodItem}
+                      section={section}
+                      index={index}
+                    />
+                  </div>
+                ))}
+            </div>
+          </div>
+
+
+
+
           /*<div key={index} className="flex flex-col sm:px-32 px-12">
             <h1>
               {section}
