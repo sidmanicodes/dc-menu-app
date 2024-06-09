@@ -1,4 +1,3 @@
-
 {
     "short_name": "aggiemenus",
     "name": "aggiemenus",
@@ -9,7 +8,7 @@
     "background_color": "#FFFFFF",
     "icons": [
       {
-        "src": "/cowlogo.png",
+        "src": "/cowlogo512.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable any"
