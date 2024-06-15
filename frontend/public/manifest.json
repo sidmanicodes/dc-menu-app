@@ -1,7 +1,6 @@
-
 {
-    "short_name": "AggieMenus",
-    "name": "AggieMenus",
+    "short_name": "aggiemenus",
+    "name": "aggiemenus",
     "start_url": "/",
     "scope": "./",
     "display": "standalone",
@@ -9,7 +8,7 @@
     "background_color": "#FFFFFF",
     "icons": [
       {
-        "src": "/cowlog512.png",
+        "src": "/cowlogo512.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "maskable any"
