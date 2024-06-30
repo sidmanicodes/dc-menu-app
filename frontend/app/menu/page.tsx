@@ -59,7 +59,7 @@ const Menu = () => {
       </header>
       <main className="flex flex-col flex-grow">
         {/* <Selections /> */}
-        <Selections
+        {/* <Selections
           selectedDC={selectedDC}
           setSelectedDC={setSelectedDC}
           selectedDay={selectedDay}
@@ -71,7 +71,11 @@ const Menu = () => {
           dc={selectedDC}
           day={selectedDay}
           meal={selectedMeal}
-        />
+        /> */}
+        <div className="text-lg text-center">
+          aggiemenus is currently closed for the summer. Be sure to check back
+          in Fall quarter!
+        </div>
       </main>
       <footer>
         <Footer />
