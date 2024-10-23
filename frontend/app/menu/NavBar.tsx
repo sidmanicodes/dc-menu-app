@@ -19,8 +19,8 @@ const NavBar = ({ searchBarOpen, setSearchBarOpen }: Props) => {
       <Image
         src="/aggiemenus.svg"
         alt="Aggie Menus"
-        width={300}
-        height={300}
+        width={100}
+        height={100}
         className={`${
           searchBarOpen ? "hidden" : ""
         } items-center justify-center sm:size-[15%] size-[50%]`}
